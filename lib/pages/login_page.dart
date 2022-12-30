@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_app/component/button.dart';
 import 'package:pet_app/component/textFormField.dart';
+import 'package:pet_app/pages/register_page.dart';
 import 'package:pet_app/theme.dart';
 
 class loginPage extends StatelessWidget {
@@ -83,15 +84,24 @@ class loginPage extends StatelessWidget {
           ),
           SizedBox(height: 108),
           Center(
-            child: RichText(
-                text: TextSpan(children: <TextSpan>[
-              TextSpan(
-                  text: 'Don’t have an account?',
-                  style: regularText.copyWith(fontSize: 12)),
-              TextSpan(
-                  text: ' Create Account',
-                  style: boldText.copyWith(fontSize: 12, color: primaryColor))
-            ])),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => signupPage(),
+                    ));
+              },
+              child: RichText(
+                  text: TextSpan(children: <TextSpan>[
+                TextSpan(
+                    text: 'Don’t have an account?',
+                    style: regularText.copyWith(fontSize: 12)),
+                TextSpan(
+                    text: ' Create Account',
+                    style: boldText.copyWith(fontSize: 12, color: primaryColor))
+              ])),
+            ),
           ),
           SizedBox(height: 32),
           Center(child: buttonWidget()),
