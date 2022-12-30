@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_app/component/button.dart';
+import 'package:pet_app/pages/login_page.dart';
 import 'package:pet_app/theme.dart';
 
 class onboardingScreen extends StatefulWidget {
@@ -75,9 +76,15 @@ class _onboardingScreenState extends State<onboardingScreen> {
             ],
           ),
           SizedBox(height: 50),
-          Center(
-              child: buttonWidget(
-            linked: () {},
+          Center(child: buttonWidget(
+            linked: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => loginPage(),
+                  ),
+                  (route) => false);
+            },
           )),
           SizedBox(height: 24)
         ]),

@@ -23,3 +23,22 @@ class buttonWidget extends StatelessWidget {
     );
   }
 }
+
+class loginAuthButton extends StatelessWidget {
+  String image;
+  var loginAuthLinked;
+  loginAuthButton({required this.image, this.loginAuthLinked, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    ButtonStyle authStyle = OutlinedButton.styleFrom(
+        minimumSize: Size(MediaQuery.of(context).size.width - (2 * 109), 60),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+            side: BorderSide(color: greyLight)));
+    return OutlinedButton(
+        style: authStyle,
+        onPressed: loginAuthLinked,
+        child: Image.asset(image));
+  }
+}
