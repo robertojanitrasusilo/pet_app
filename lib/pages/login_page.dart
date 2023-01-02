@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_app/component/button.dart';
 import 'package:pet_app/component/textFormField.dart';
+import 'package:pet_app/pages/Menu%20Page/menu_page.dart';
 import 'package:pet_app/pages/register_page.dart';
 import 'package:pet_app/theme.dart';
 
@@ -104,7 +105,16 @@ class loginPage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 32),
-          Center(child: buttonWidget()),
+          Center(child: buttonWidget(
+            linked: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => menuPage(),
+                  ),
+                  (route) => true);
+            },
+          )),
           SizedBox(height: 24)
         ]),
       ),
