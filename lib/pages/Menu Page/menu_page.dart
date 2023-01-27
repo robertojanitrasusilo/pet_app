@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_app/component/category.dart';
 import 'package:pet_app/component/icon.dart';
 import 'package:pet_app/pages/Menu%20Page/component/locationSearchNotif.dart';
 import 'package:pet_app/pages/Menu%20Page/component/promo.dart';
@@ -26,6 +27,8 @@ class menuPage extends StatelessWidget {
                 style: regularText.copyWith(fontSize: 12, color: primaryColor)),
           ]),
         ),
+        SizedBox(height: 20),
+        category()
       ]),
     ));
   }
