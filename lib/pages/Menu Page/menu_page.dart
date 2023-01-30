@@ -5,6 +5,7 @@ import 'package:pet_app/component/icon.dart';
 import 'package:pet_app/pages/Menu%20Page/component/locationSearchNotif.dart';
 import 'package:pet_app/pages/Menu%20Page/component/product.dart';
 import 'package:pet_app/pages/Menu%20Page/component/promo.dart';
+import 'package:pet_app/pages/best_seller_page.dart';
 import 'package:pet_app/theme.dart';
 
 class menuPage extends StatelessWidget {
@@ -39,9 +40,16 @@ class menuPage extends StatelessWidget {
             child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
               Text('Best Seller', style: boldText.copyWith(fontSize: 16)),
               Spacer(),
-              Text('View All',
-                  style:
-                      regularText.copyWith(fontSize: 12, color: primaryColor)),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => bestSeller(),
+                    )),
+                child: Text('View All',
+                    style: regularText.copyWith(
+                        fontSize: 12, color: primaryColor)),
+              ),
             ]),
           ),
           SizedBox(height: 20),
