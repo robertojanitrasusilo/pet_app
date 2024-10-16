@@ -10,11 +10,11 @@ class buttonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     ButtonStyle buttonstyle = ElevatedButton.styleFrom(
         elevation: 0,
+        backgroundColor: primaryColor,
         minimumSize: Size(MediaQuery.of(context).size.width - (2 * 24), 60),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
-        primary: primaryColor,
         textStyle: boldText.copyWith(fontSize: 16, color: Colors.white));
     return ElevatedButton(
       style: buttonstyle,
